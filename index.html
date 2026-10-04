@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf7f0">
+  <title> CROCHET Studio | Handmade Crochet</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar">
+    <button class="menu-btn" id="menu-open" aria-label="Open menu">☰</button>
+    <a class="logo" href="#" id="brand">CROCHET Studio<span>✿</span></a>
+    <div class="top-actions">
+      <button id="search-toggle" aria-label="Search">⌕</button>
+      <button id="cart-open" aria-label="Shopping bag">Bag (<span id="cart-count">0</span>)</button>
+    </div>
+  </header>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="sidebar" id="sidebar" aria-label="Shop menu">
+    <div class="side-head">
+      <span>Explore collections</span>
+      <button id="menu-close" aria-label="Close menu">✕</button>
+    </div>
+    <div id="category-menu"></div>
+    <div class="side-extra">
+      <button data-special="Bestsellers">Bestsellers</button>
+      <button data-special="Season Special">Season Special</button>
+      <button data-special="Premium Bouquet">Premium Bouquet</button>
+      <button data-special="Custom Orders">Custom Orders</button>
+    </div>
+  </aside>
+
+  <div class="search-bar" id="search-bar" hidden>
+    <input id="search-input" placeholder="Search flowers, bouquets, keychains..." aria-label="Search products">
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">HANDMADE WITH LOVE ♡</p>
+        <h1>Flowers that<br><em>never fade.</em></h1>
+        <p>Little handmade treasures, thoughtfully crocheted to make your moments special.</p>
+        <button class="primary-btn" id="explore">Explore collection ↗</button>
+        <small>Every stitch tells a story.</small>
+      </div>
+      <div class="hero-art">
+        <div class="hero-flower">✿</div>
+        <span>Handmade • Thoughtful • Yours</span>
+      </div>
+    </section>
+
+    <section class="featured">
+      <div class="section-title">
+        <p class="eyebrow">LOVED BY MANY</p>
+        <h2>Our <em>Bestsellers</em></h2>
+      </div>
+      <div class="feature-links">
+        <button data-special="Bestsellers">Shop bestsellers ↗</button>
+        <button data-special="Season Special">Season special ↗</button>
+        <button data-special="Premium Bouquet">Premium bouquets ↗</button>
+        <button data-special="Custom Orders">Custom orders ↗</button>
+      </div>
+    </section>
+
+    <section class="shop" id="shop">
+      <div class="section-title">
+        <p class="eyebrow">MADE JUST FOR YOU</p>
+        <h2 id="listing-title">Explore our <em>collections</em></h2>
+        <p id="listing-subtitle">Find a little something to love.</p>
+      </div>
+      <div class="filter-row">
+        <span id="result-count"></span>
+        <button id="clear-filter">View all products</button>
+      </div>
+      <div class="product-grid" id="product-grid"></div>
+    </section>
+
+    <section class="custom">
+      <p class="eyebrow">A LITTLE MORE PERSONAL</p>
+      <h2>Dream it.<br><em>We'll crochet it.</em></h2>
+      <p>Have a special colour, flower or bouquet in mind? Let's make something unique for you.</p>
+      <button class="primary-btn" id="custom-order">Request a custom order ↗</button>
+    </section>
+  </main>
+
+  <div class="cart-panel" id="cart-panel" aria-label="Shopping bag">
+    <div class="side-head">
+      <strong>Your bag</strong>
+      <button id="cart-close" aria-label="Close bag">✕</button>
+    </div>
+    <div id="cart-items"></div>
+    <div class="cart-bottom">
+      <p>Total: <strong id="cart-total">₹0</strong></p>
+      <button class="primary-btn" id="checkout">Order on WhatsApp ↗</button>
+    </div>
+  </div>
+
+  <footer>
+    <a class="logo" href="#">CROCHET Studio<span>✿</span></a>
+    <p>Handmade with love ♡</p>
+    <a id="instagram-link" href="#" target="_blank" rel="noopener">Instagram ↗</a>
+    <small>© 2026 CROCHET Studio</small>
+  </footer>
+
+<div class="modal-backdrop" id="product-modal" hidden>
+    <div class="product-modal" role="dialog"
+         aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-head">
+            <h2 id="modal-title">Customise your item</h2>
+            <button id="modal-close" aria-label="Close">✕</button>
+        </div>
+
+        <p id="modal-description"></p>
+
+        <label for="colour-choice">Colour preference</label>
+        <select id="colour-choice">
+            <option value="As shown / available">As shown / available</option>
+            <option>Pink</option>
+            <option>White</option>
+            <option>Red</option>
+            <option>Yellow</option>
+            <option>Lavender</option>
+            <option>Sage green</option>
+            <option>Custom colour (discuss on WhatsApp)</option>
+        </select>
+
+        <div id="custom-fields"></div>
+
+        <label for="item-quantity">Quantity</label>
+        <input id="item-quantity" type="number"
+               value="1" min="1" max="20">
+
+        <label for="item-note">Additional requests</label>
+        <textarea id="item-note" rows="3"
+                  placeholder="Any special instructions?"></textarea>
+
+        <p class="modal-price" id="modal-price">
+            Price to be confirmed
+        </p>
+
+        <button class="primary-btn" id="add-customised">
+            Add to bag
+        </button>
+    </div>
+</div>
+  <script src="script.js"></script>
+</body>
+</html>
